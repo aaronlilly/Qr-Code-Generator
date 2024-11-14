@@ -1,0 +1,21 @@
+<script>
+
+    let myQRURL = '[@field:MBizCard_URL]';
+    let myQRcheck = '[@field:QR_Code_MBizCard]';
+let myQRColor = '[@field:Menu_Hover_Color]';
+
+function generateQRCode() {
+        // Set default color to black if myQRColor is empty
+        var color = myQRColor !== '' ? myQRColor : '#000000'; // Black color if myQRColor is empty
+
+        // Generate QR code with custom color
+        var qr = new QRCode(document.getElementById("qrCode"), {
+            text: myQRURL,
+            width: 325,
+            height: 325,
+            colorDark: color,
+            colorLight: "#ffffff", // Background color
+            correctLevel: QRCode.CorrectLevel.H // Error correction level
+        });
+    }
+</script>
