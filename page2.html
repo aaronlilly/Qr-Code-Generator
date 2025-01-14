@@ -1,12 +1,25 @@
 <script src="./qrHelper.js"></script>
+<style>
+  .mySuccess{
+    display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #155724; /* Text color */
+  background-color: #d4edda; /* Background color */
+  border: 1px solid #c3e6cb; /* Border color */
+  border-radius: 4px; /* Rounded corners */
+  text-align: center;
+  cursor: pointer;
+  }
+</style>
 
-<input id="text" type="text" value="https://hogangnono.com" style="width:80%" /><br />
 <div id="qrcode"></div>
 
 <script>
     var qrcode = new QRCode("qrcode");
 
-function makeCode () {    
+function myCodeFunct() {    
   var elText = document.getElementById("text");
   
   if (!elText.value) {
@@ -16,20 +29,13 @@ function makeCode () {
   }
   
   qrcode.makeCode(elText.value);
-}
-
-makeCode();
-
-$("#text").
-  on("blur", function () {
-    makeCode();
-  }).
-  on("keydown", function (e) {
-    if (e.keyCode == 13) {
-      makeCode();
-    }
-  });
+};
 
 </script>
+<br>
+Enter Web Address for QR:<br>
+<input id="text" placeholder="http://www.site.com" type="text"/><br />
+<br>
+<div class='mySuccess' onclick="myCodeFunct()">Create QR</div>
 
 <script src="./qrHelper.js"></script>

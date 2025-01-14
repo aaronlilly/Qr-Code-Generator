@@ -1,5 +1,4 @@
-
-    /**
+ /**
  * @fileoverview
  * - Using the 'QRCode for Javascript library'
  * - Fixed dataset of 'QRCode for Javascript library' for support full-spec.
